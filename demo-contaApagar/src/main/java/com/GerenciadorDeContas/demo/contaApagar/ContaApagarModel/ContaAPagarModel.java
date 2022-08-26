@@ -1,8 +1,7 @@
 package com.GerenciadorDeContas.demo.contaApagar.ContaApagarModel;
 
-import com.GerenciadorDeContas.demo.contaApagar.ContaApagarModel.enuns.status;
-import com.GerenciadorDeContas.demo.contaApagar.ContaApagarModel.enuns.tipo;
-import com.sun.istack.NotNull;
+import com.GerenciadorDeContas.demo.contaApagar.ContaApagarModel.enuns.Status;
+import com.GerenciadorDeContas.demo.contaApagar.ContaApagarModel.enuns.Tipo;
 import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -26,11 +25,11 @@ public class ContaAPagarModel {
 
     @Column(name = "status")
     @Enumerated(value = EnumType.STRING)
-    private status status;
+    private Status status;
 
     @Column(length = 10, nullable = false)
     @Enumerated(value = EnumType .STRING)
-    private tipo tipo;
+    private Tipo tipo;
 
     @Column(length = 10, nullable = false)
     private Double Valor;

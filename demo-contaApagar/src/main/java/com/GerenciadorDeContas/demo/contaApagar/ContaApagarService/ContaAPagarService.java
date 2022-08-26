@@ -1,6 +1,6 @@
 package com.GerenciadorDeContas.demo.contaApagar.ContaApagarService;
 
-import com.GerenciadorDeContas.demo.contaApagar.ContaApagarModel.enuns.status;
+import com.GerenciadorDeContas.demo.contaApagar.ContaApagarModel.enuns.Status;
 import com.GerenciadorDeContas.demo.contaApagar.ContaApagarModel.ContaAPagarModel;
 import com.GerenciadorDeContas.demo.contaApagar.ContaApagarRepository.ContaAPagarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +28,9 @@ public class ContaAPagarService {
 
         LocalDate dataAtual = LocalDate.now();
         if (contaAPagarModel.getDataDeVencimento().isBefore(dataAtual)) {
-            contaAPagarModel.setStatus(status.VENCIDA);
+            contaAPagarModel.setStatus(Status.VENCIDA);
         } else {
-            contaAPagarModel.setStatus(status.AGUARDANDO);
+            contaAPagarModel.setStatus(Status.AGUARDANDO);
         }
 
         contaAPagarModel.getId();
@@ -43,7 +43,7 @@ public class ContaAPagarService {
     }
     public ContaAPagarModel alterarStatusConta(ContaAPagarModel contaAPagarModel) {
 
-      if (contaAPagarModel.getStatus().equals(status.PAGO)) {
+      if (contaAPagarModel.getStatus().equals(Status.PAGO)) {
           LocalDateTime dataAtual = LocalDateTime.now();
         contaAPagarModel.setDataDePagamento(dataAtual);
      }
